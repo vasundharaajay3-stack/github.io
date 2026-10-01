@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Vasundhara P G, B.Tech Computer Science and Information Technology (CSIT) student.">
+    <title>Vasundhara P G | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #e8e8e8;
+            background: #0b0b0b;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        .container {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 11, 0.96);
+            border-bottom: 1px solid #292929;
+        }
+
+        nav {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #cfcfcf;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #202020;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 80px 0;
+        }
+
+        .hero-label {
+            color: #a8a8a8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.1rem, 2vw, 1.45rem);
+            font-weight: 400;
+            color: #c9c9c9;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #a9a9a9;
+            font-size: 1.05rem;
+        }
+
+        .section {
+            padding: 90px 0;
+            border-bottom: 1px solid #202020;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #a8a8a8;
+            margin-bottom: 40px;
+        }
+
+        .about-content {
+            max-width: 850px;
+            color: #c4c4c4;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+        }
+
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .activity-card {
+            background: #121212;
+            border: 1px solid #2b2b2b;
+            border-radius: 12px;
+            padding: 28px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-3px);
+            border-color: #4a4a4a;
+        }
+
+        .activity-number {
+            display: inline-block;
+            color: #999999;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .activity-card h3 {
+            color: #ffffff;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .activity-card p {
+            color: #aaaaaa;
+            font-size: 0.96rem;
+        }
+
+        .repository {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #292929;
+            color: #8f8f8f;
+            font-size: 0.9rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 9px 15px;
+            border: 1px solid #343434;
+            border-radius: 999px;
+            background: #121212;
+            color: #c5c5c5;
+        }
+
+        .goal-box {
+            max-width: 850px;
+            background: #121212;
+            border-left: 3px solid #777777;
+            padding: 28px;
+        }
+
+        .goal-box p {
+            color: #c2c2c2;
+            margin-bottom: 15px;
+        }
+
+        .goal-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-content {
+            max-width: 750px;
+        }
+
+        .contact-content p {
+            color: #aaaaaa;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            color: #777777;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 18px 0;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px 20px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 90px 0;
+            }
+
+            .activities {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                width: min(92%, 1100px);
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .nav-links {
+                gap: 10px 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.88rem;
+            }
+
+            .activity-card {
+                padding: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="container" aria-label="Main navigation">
+            <a class="logo" href="#home">Vasundhara P G</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects &amp; Activities</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#career">Career &amp; Learning Goal</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="home" class="hero" aria-labelledby="home-title">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-label">Portfolio</p>
+
+                    <h1 id="home-title">Vasundhara P G</h1>
+
+                    <h2>
+                        B.Tech Computer Science and Information Technology (CSIT)
+                    </h2>
+
+                    <p>
+                        A Computer Science and Information Technology student interested
+                        in programming, software development, and problem solving.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <h2 id="about-title" class="section-title">About</h2>
+
+                <div class="about-content">
+                    <p>
+                        I am Vasundhara P G, a B.Tech Computer Science and Information
+                        Technology (CSIT) student.
+                    </p>
+
+                    <p>
+                        I am building my technical foundation through programming,
+                        software development, problem solving, and practical activities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">
+                    Projects &amp; Activities
+                </h2>
+
+                <p class="section-intro">
+                    A collection of academic and practical activities completed as part
+                    of my learning journey.
+                </p>
+
+                <div class="activities">
+
+                    <article class="activity-card">
+                        <span class="activity-number">Activity 1</span>
+                        <h3>GitHub</h3>
+                        <p>
+                            I learned the basics of GitHub and used it to understand
+                            repository creation, version control, and managing coding
+                            work online.
+                        </p>
+                        <div class="repository">
+                            Repository:
+                        </div>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">Activity 2</span>
+                        <h3>Portfolio Website</h3>
+                        <p>
+                            I created a personal portfolio website to present my
+                            background, learning activities, skills, and career goals
+                            in a structured format.
+                        </p>
+                        <div class="repository">
+                            Repository:
+                        </div>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">Activity 3</span>
+                        <h3>GitLens and Live Share</h3>
+                        <p>
+                            I explored GitLens and Live Share for collaborative
+                            programming. This activity helped me understand how
+                            developers can work together, track changes, and
+                            collaborate on coding projects.
+                        </p>
+                        <div class="repository">
+                            Repository:
+                        </div>
+                    </article>
+
+                    <article class="activity-card">
+                        <span class="activity-number">Activity 4</span>
+                        <h3>LeetCode Solutions</h3>
+                        <p>
+                            I practiced problem solving through LeetCode and organized
+                            my solutions to build familiarity with programming
+                            problems and basic algorithms.
+                        </p>
+                        <div class="repository">
+                            Repository:
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <h2 id="skills-title" class="section-title">Skills</h2>
+
+                <p class="section-intro">
+                    Technical skills developed and currently being practiced.
+                </p>
+
+                <ul class="skills-list" aria-label="Skills">
+                    <li>C</li>
+                    <li>Python</li>
+                    <li>Git/GitHub</li>
+                    <li>Problem Solving</li>
+                    <li>Basic SQL/DBMS</li>
+                    <li>Basic DSA</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="career" class="section" aria-labelledby="career-title">
+            <div class="container">
+                <h2 id="career-title" class="section-title">
+                    Career &amp; Learning Goal
+                </h2>
+
+                <div class="goal-box">
+                    <p>
+                        My goal is to strengthen my programming and problem-solving
+                        foundations and continue developing practical software
+                        development skills.
+                    </p>
+
+                    <p>
+                        I aim to keep learning through academic work, practical
+                        activities, coding practice, and project-based learning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Contact</h2>
+
+                <div class="contact-content">
+                    <p>
+                        This portfolio is intended to present my academic learning,
+                        technical interests, and ongoing development as a CSIT student.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Vasundhara P G. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
